@@ -1,16 +1,12 @@
 from typing import List
+from collections import Counter
 class Solution:
     def getSneakyNumbers(self, nums: List[int]) -> List[int]:
         thislist = []
-        i = 0
-        while i < len(nums):
-            a = nums[i]
-            j = i + 1
-            while j < len(nums):
-                if nums[j] == a:
-                    thislist.append(nums[j])
-                j += 1
-            i += 1
+        p = Counter(nums)
+        for i , j in p.items():
+            if j > 1:
+                thislist.append(i)
         return thislist
 
 

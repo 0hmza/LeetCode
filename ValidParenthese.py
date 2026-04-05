@@ -5,7 +5,7 @@ class Solution:
         for i in range(len(s)):
             if s[i]=='('or s[i]=='['or s[i]=='{':
                 thislist.append(s[i])
-            else:
+            elif s[i] in ")}]":
                 if not thislist:
                     return False
                 top=thislist.pop()
@@ -19,4 +19,5 @@ class Solution:
 
             
 answer = Solution()
-print(answer.isValid("{[]}}{}"))
+print(answer.isValid("{}{}{}"))
+print(answer.isValid("hello(pppp)[hello]"))
